@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "FNC Inspector Bridge - histórico visível",
+  "version": "1.0.0",
+  "description": "Lê, com permissão, linhas de histórico visíveis em tabelas da 3SS. Não faz apostas nem acessa credenciais.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://3ss.vip/*", "https://*.3ss.vip/*"],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_popup": "popup.html", "default_title": "FNC Inspector Bridge"},
+  "content_scripts": [
+    {"matches": ["https://3ss.vip/*", "https://*.3ss.vip/*"], "js": ["capture.js"], "run_at": "document_idle", "all_frames": true}
+  ],
+  "externally_connectable": {
+    "matches": ["https://*.github.io/*", "http://localhost/*", "http://127.0.0.1/*"]
+  }
+}

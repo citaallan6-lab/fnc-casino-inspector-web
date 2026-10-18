@@ -1,0 +1,14 @@
+FNC INSPECTOR PRO V7 — STATUS REAL
+--------------------------------
+PASSOU: HTML/JavaScript checado com Node.js.
+PASSOU: Renderização desktop e mobile em Chromium sem erros JS.
+PASSOU: Importação de 2 linhas de histórico de teste por texto colado.
+PASSOU: Importação repetida não duplicou linhas com mesmo ID.
+PASSOU: Janela experimental registrada sem dados suficientes e recusou sinal de ganho confiável.
+PASSOU: Extrator DOM detectou 2 linhas de tabela HTML de TESTE com dados, horário, ID e prêmios.
+PASSOU: Teste do serviço da extensão com captura de 1 rodada, anti-duplicação e pareamento (sem Chrome instalado).
+PENDENTE: Teste de extensão completa instalada em Chrome real de usuário (Chrome deste ambiente bloqueia extensões por política).
+PENDENTE: Validação da captura no histórico real da 3ss.vip e de possíveis redirecionamentos.
+PENDENTE: Teste de armazenamento local em endereço HTTPS de produção (ambiente de testes bloqueia localStorage em about:blank).
+NÃO DISPONÍVEL: Modelo com 85%-90% de predição verificada, ou resultados futuros.
+NÃO DISPONÍVEL: Site publicado; a implantação no GitHub depende do repositório do usuário.

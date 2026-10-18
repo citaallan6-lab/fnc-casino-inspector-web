@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#070d0b" />
+<title>FNC Inspector PRO | Web</title>
+<style>
+:root{color-scheme:dark;--bg:#070e0b;--panel:#0d1914;--panel2:#10221a;--stroke:#254636;--green:#7bffc0;--text:#e8fff0;--muted:#93b5a2;--yellow:#ffdf88;--red:#ff8181;--shadow:0 15px 50px rgba(0,0,0,.3)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -40%,#184830 0%,transparent 54%),var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}a{color:var(--green)}code{color:#b9fbd4}h1,h2,h3,p{margin:0}small{color:var(--muted)}.layout{display:grid;grid-template-columns:238px minmax(0,1fr);min-height:100vh}.sidebar{background:#09140f;border-right:1px solid var(--stroke);padding:25px 17px;display:flex;flex-direction:column;gap:18px;position:sticky;top:0;height:100vh}.logo{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.09em}.logo-mark{width:43px;height:43px;border:1px solid #53d994;border-radius:14px;background:#102b1d;display:grid;place-items:center;font:900 22px monospace;color:var(--green);box-shadow:0 0 20px #33b27825}.logo small{display:block;letter-spacing:.16em;font-weight:500}.side-label{padding:8px 11px;color:#64917a;font-size:10px;letter-spacing:.2em}.nav{display:flex;flex-direction:column;gap:7px}.nav button{border:1px solid transparent;background:transparent;text-align:left;color:var(--muted);border-radius:12px;padding:12px 14px}.nav button.active{background:#163525;color:var(--green);border-color:#2b6745}.nav button:hover{background:#14291e;color:var(--text)}.sidebar-footer{margin-top:auto;font-size:11px;color:#71917e}.sidebar-footer strong{color:var(--green)}.main{padding:35px max(26px,4vw) 60px;max-width:1540px;width:100%;margin:0 auto}.heading{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;flex-wrap:wrap;margin-bottom:26px}.eyebrow{color:var(--green);font:600 11px monospace;letter-spacing:.24em;margin-bottom:10px}.heading h1{font-size:clamp(29px,3vw,43px);letter-spacing:-.045em;line-height:1.1}.sub{color:var(--muted);max-width:760px;margin-top:10px}.flag{background:#14261d;border:1px solid #385947;border-radius:999px;padding:8px 12px;color:#bee6ca;font-size:12px;white-space:nowrap}.flag::before{content:'●';color:var(--green);margin-right:8px}.panel{background:linear-gradient(145deg,#102018cc,#0b1813f2);border:1px solid var(--stroke);border-radius:17px;box-shadow:var(--shadow);padding:21px}.section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:17px;flex-wrap:wrap}.section-title h2{font-size:16px;font-weight:750}.section-title p{color:var(--muted);font-size:12px}.banner{border:1px solid #6f5b30;color:#ffe1a0;background:#292317;padding:12px 15px;border-radius:11px;margin-bottom:20px}.banner strong{color:#ffebbd}.filters{display:flex;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:18px}.field{display:flex;flex-direction:column;gap:6px;flex:1;min-width:170px}.field>label{color:var(--muted);font-size:12px}.field input,.field select,.field textarea,.inline-input{background:#091710;color:var(--text);border:1px solid #35634a;border-radius:9px;padding:11px 12px;outline:none;min-width:0;width:100%}.field input:focus,.field select:focus,.field textarea:focus{border-color:#87fac1;box-shadow:0 0 0 2px #87fac11e}.field textarea{min-height:100px;resize:vertical}.btn{color:#07190f;background:var(--green);border:1px solid var(--green);font-weight:750;border-radius:10px;padding:11px 15px;min-height:42px}.btn:hover{filter:brightness(1.07)}.btn.ghost{color:var(--green);background:#10251a;border-color:#356c4b}.btn.soft{background:transparent;border-color:#456454;color:var(--text)}.btn.danger{background:#362020;border-color:#945353;color:#ffb3b3}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}.metric{padding:20px;min-height:140px}.metric .caption{color:var(--muted);font-size:12px}.metric .value{font-size:clamp(23px,2.6vw,35px);font-weight:780;letter-spacing:-.05em;margin-top:12px}.metric .hint{color:#a5beaf;margin-top:4px;font-size:11px}.green{color:var(--green)}.yellow{color:var(--yellow)}.red{color:var(--red)}.grid2{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,1fr);gap:17px;margin-bottom:18px}.chart-area{min-height:245px;display:flex;align-items:center}.chart-area svg{width:100%;height:auto;max-height:265px}.status-row{border-top:1px solid #294535;padding:12px 0;display:flex;gap:10px;justify-content:space-between}.status-row:first-of-type{border-top:none}.status-row span:first-child{color:var(--muted)}.status-row span:last-child{text-align:right}.notice{padding:13px 14px;border:1px solid #33583f;border-radius:10px;background:#12271a;color:#c7e3ce;margin:12px 0}.notice.warn{border-color:#70603b;background:#292317;color:#ffe1a0}.notice.bad{border-color:#7d4141;background:#271718;color:#ffb6b6}.table-wrap{overflow:auto;max-height:500px}table{border-collapse:collapse;width:100%;min-width:750px;text-align:left}th{color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.08em}th,td{border-bottom:1px solid #254235;padding:12px 9px}td{font-size:12px}tr:last-child td{border-bottom:none}.pill{display:inline-flex;align-items:center;border:1px solid #39724e;background:#153523;color:#9affc2;padding:3px 9px;border-radius:20px;font-size:11px}.pill.zero{border-color:#56563e;background:#252719;color:#f6d793}.pill.demo{border-color:#8d6539;background:#342616;color:#ffe3a6}.hidden{display:none!important}.empty{padding:33px 16px;text-align:center;color:var(--muted)}.formgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.tip{font-size:12px;color:var(--muted)}.rule{padding:16px;border:1px solid #284733;background:#101e17;border-radius:12px;margin-bottom:11px}.rule strong{display:block;font-size:13px;margin-bottom:5px}.rule p{color:#b1cabb;font-size:12px}.divider{height:1px;background:var(--stroke);margin:21px 0}.mini-bar{height:8px;background:#193022;border-radius:20px;overflow:hidden;margin-top:7px}.mini-bar i{display:block;height:100%;background:var(--green);border-radius:20px}.audit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.audit-card{padding:15px;background:#0a1c12;border:1px solid #294536;border-radius:11px}.audit-card h3{font-size:13px;margin-bottom:9px}.audit-card .big{font-weight:800;font-size:25px}.vstack{display:flex;flex-direction:column;gap:13px}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.footer{font-size:12px;color:#7fa58d;margin-top:24px}.source-head{font-size:12px;color:#98bba5;text-transform:uppercase;letter-spacing:.1em}.file-input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none} .kbd{padding:3px 6px;border-radius:5px;background:#183723;font-family:monospace;color:#91ddac}.stack-mobile{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+@media(max-width:1100px){.grid4{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}}@media(max-width:750px){.layout{display:block}.sidebar{height:auto;position:static;padding:13px;gap:9px}.logo-mark{width:32px;height:32px;border-radius:8px;font-size:18px}.side-label,.sidebar-footer{display:none}.nav{flex-direction:row;overflow-x:auto;gap:5px}.nav button{white-space:nowrap;font-size:12px;padding:9px 10px}.main{padding:22px 13px 50px}.panel{padding:16px;border-radius:12px}.grid4{gap:9px}.metric{padding:14px;min-height:125px}.formgrid,.audit-grid{grid-template-columns:1fr}.field{min-width:125px}.filters{align-items:stretch}.heading{margin-bottom:18px}.heading h1{font-size:29px}}
+
+/* Pro V7 enhancements */
+body{background:radial-gradient(circle at 78% -12%,rgba(34,115,70,.27),transparent 31%),radial-gradient(circle at 14% 68%,rgba(10,75,52,.18),transparent 34%),#060c09}
+.sidebar{background:linear-gradient(180deg,#08140f,#060d09);box-shadow:12px 0 50px #0003}.logo-mark{box-shadow:0 0 34px #34e38a29,inset 0 0 18px #36ac6920}.heading{padding:6px 0 5px}.heading h1{font-weight:850}.panel{transition:border-color .18s ease}.panel:hover{border-color:#376d4d}.btn{transition:transform .16s ease,filter .16s ease}.btn:hover{transform:translateY(-1px)}.top-hero{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin:0 0 20px;padding:26px 26px 26px 29px;border:1px solid #2f6a48;border-radius:17px;background:linear-gradient(105deg,#113c28cc,#102118bb 52%,#07160e),repeating-linear-gradient(90deg,transparent 0 40px,#ffffff04 40px 41px);box-shadow:0 20px 55px #0003;position:relative;overflow:hidden}.top-hero:after{content:'◎';position:absolute;right:14%;top:-84px;color:#72fba612;font:320px/1 monospace;pointer-events:none}.top-hero h2{font-size:clamp(20px,2.6vw,31px);letter-spacing:-.04em}.top-hero h2 span{color:var(--green)}.top-hero p{max-width:620px;color:#9dbaaa;margin-top:8px;font-size:12px;line-height:1.65}.hero-actions{display:flex;gap:9px;position:relative;z-index:1;flex-wrap:wrap}.compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.compare-item{padding:17px 18px;background:linear-gradient(145deg,#0b2317,#0b1912);border:1px solid #294e38;border-radius:13px}.compare-item .game-name{font-weight:800;margin-bottom:12px}.compare-item .game-value{font-size:25px;font-weight:850;letter-spacing:-.04em}.compare-item .game-label{font-size:11px;color:var(--muted);margin:5px 0 13px}.compare-item .pill{margin-bottom:8px}.paste-box{width:100%;resize:vertical;min-height:122px;margin-top:12px;border:1px solid #38634d;background:#0a1911;color:var(--text);padding:14px;border-radius:11px;font-family:ui-monospace,monospace;font-size:12px}.paste-box:focus{outline:2px solid #70e9a5}.warning-note{color:#ebd4a2;font-size:11px}
+@media(max-width:1000px){.compare-grid{grid-template-columns:1fr}.hero-actions{width:100%}}@media(max-width:750px){.top-hero{padding:17px}.top-hero:after{display:none}.compare-grid{grid-template-columns:1fr}}
+</style>
+<meta name="description" content="FNC Inspector PRO: painel de auditoria de históricos, RTP observado, análise de janelas e coleta opcional no Chrome do PC." />
+<link rel="manifest" href="./manifest.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="./icon.svg" />
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="logo"><div class="logo-mark">F</div><div>FNC INSPECTOR<small>CASINO // PRO V7</small></div></div>
+  <div class="side-label">ÁREA DE INVESTIGAÇÃO</div>
+  <div class="nav" role="navigation" aria-label="Seções">
+    <button data-view="dashboard" class="active">◈ Visão geral</button>
+    <button data-view="results">▤ Resultados</button>
+    <button data-view="windows">◷ Janelas</button>
+    <button data-view="audit">⌕ Auditoria</button>
+    <button data-view="connect">⌁ Conectar Chrome</button>
+    <button data-view="guide">⚙ Fontes e ajuda</button>
+  </div>
+  <div class="sidebar-footer">● <strong>PRIVACIDADE LOCAL</strong><br>Integração opcional no Chrome PC.<br>Nenhuma aposta automatizada.</div>
+</aside>
+<main class="main">
+  <div class="heading"><div><div class="eyebrow">INVESTIGAÇÃO DE RESULTADOS // 3SS.VIP</div><h1>FNC Casino Inspector</h1><p class="sub">Painel profissional de auditoria do histórico: acompanha dados importados, compara jogos, valida hipóteses por janela e pode receber resultados visíveis por extensão opcional no Chrome do PC.</p></div><div class="flag">LOCAL · DADOS VERIFICÁVEIS</div></div>
+  <div id="demoBanner" class="banner hidden"><strong>BASE DE DEMONSTRAÇÃO.</strong> Estes dados são artificiais e servem apenas para testar a interface. Não representam resultados reais da 3ss.vip.</div>
+  <div class="filters">
+    <div class="field" style="max-width:240px"><label for="platform">Plataforma em análise</label><input id="platform" value="3ss.vip" readonly /></div>
+    <div class="field" style="max-width:240px"><label for="game">Jogo</label><select id="game"><option value="all">Todos os jogos</option><option value="Fortune Tiger">Fortune Tiger (Tigrinho)</option><option value="Fortune Ox">Fortune Ox</option><option value="Fortune Rabbit">Fortune Rabbit</option></select></div>
+    <div class="field" style="max-width:185px"><label for="expectedRtp">RTP divulgado (%)</label><input id="expectedRtp" type="number" min="0" max="100" step="0.01" placeholder="Ex.: 96,50" /></div>
+    <button id="demoBtn" class="btn ghost">Visualizar demonstração</button>
+  </div>
+  <section id="dashboard" class="view">
+    <div class="top-hero">
+      <div><div class="eyebrow">OPERAÇÃO // LEITURA E AUDITORIA</div><h2>Central de inteligência <span>FNC</span></h2><p>Resultados reais quando disponíveis. O motor recalcula estatísticas ao adicionar ou receber novas rodadas. Nenhum dado de jogo é inventado.</p></div>
+      <div class="hero-actions"><button class="btn" id="gotoWindows">Analisar janelas ↗</button><button class="btn soft" id="gotoConnect">Conectar histórico</button></div>
+    </div>
+    <div class="grid4">
+      <div class="panel metric"><div class="caption">Rodadas registradas</div><div class="value" id="mCount">0</div><div class="hint">Fonte: registros importados</div></div>
+      <div class="panel metric"><div class="caption">RTP observado</div><div class="value green" id="mRtp">—</div><div class="hint">Prêmios ÷ apostas; não é o RTP teórico</div></div>
+      <div class="panel metric"><div class="caption">Rodadas com prêmio</div><div class="value" id="mWin">—</div><div class="hint">Prêmio maior que zero</div></div>
+      <div class="panel metric"><div class="caption">Saldo das rodadas</div><div class="value" id="mNet">—</div><div class="hint">Prêmios − apostas (R$)</div></div>
+    </div>
+    <div class="grid2">
+      <div class="panel"><div class="section-title"><h2>Resultado acumulado por rodada</h2><p>Histórico, nunca previsão</p></div><div class="chart-area" id="chart"><div class="empty">Importe dados para visualizar o gráfico.</div></div><p class="tip">Amostras parciais, selecionadas ou incompletas podem distorcer drasticamente o resultado.</p></div>
+      <div class="panel"><div class="section-title"><h2>Integridade dos dados</h2><p>Indicadores descritivos</p></div><div id="qualityRows"><div class="empty">Ainda não há registros.</div></div></div>
+    </div>
+    <div class="panel" style="margin-bottom:18px"><div class="section-title"><h2>Comparativo entre os três jogos</h2><p>Somente resultados registrados · não recomenda aposta</p></div><div id="gameComparison" class="compare-grid"></div></div>
+    <div class="panel"><div class="section-title"><h2>Interpretação preliminar</h2><p>Sem alegações automáticas de fraude</p></div><div id="interpretation" class="notice">Importe dados com apostas e prêmios verificáveis. O painel calculará estatísticas e alertas de qualidade, sem afirmar que o jogo foi manipulado.</div></div>
+  </section>
+  <section id="results" class="view hidden">
+    <div class="grid2" style="grid-template-columns:1fr 1fr">
+      <div class="panel"><div class="section-title"><h2>Importar arquivo CSV</h2><p>Dados fornecidos por você</p></div><p class="tip">Cabeçalho: <code>timestamp,platform,game,round_id,bet,payout,source_url,notes</code>. Também aceita separador ponto e vírgula e vírgula decimal.</p><div class="row" style="margin-top:16px"><button id="importBtn" class="btn">Selecionar CSV</button><button id="templateBtn" class="btn ghost">Baixar modelo CSV</button><input id="fileInput" class="file-input" type="file" accept=".csv,text/csv,text/plain" /></div><p class="tip" style="margin-top:10px">Até 10.000 linhas por arquivo. Nenhum CSV é enviado a servidor.</p></div>
+      <div class="panel"><div class="section-title"><h2>Registro manual</h2><p>Uma rodada por vez</p></div><form id="manualForm" class="vstack"><div class="formgrid"><div class="field"><label for="formGame">Jogo</label><select id="formGame" required><option>Fortune Tiger</option><option>Fortune Ox</option><option>Fortune Rabbit</option></select></div><div class="field"><label for="formBet">Aposta (R$)</label><input id="formBet" inputmode="decimal" placeholder="1,00" required /></div><div class="field"><label for="formPayout">Prêmio (R$)</label><input id="formPayout" inputmode="decimal" placeholder="0,00" required /></div></div><div class="formgrid"><div class="field"><label for="formRound">ID de rodada (opcional)</label><input id="formRound" maxlength="110" /></div><div class="field"><label for="formTime">Data/hora</label><input id="formTime" type="datetime-local" required /></div><div class="field"><label for="formSource">URL da evidência (opcional)</label><input id="formSource" placeholder="https://..." maxlength="500" /></div></div><button class="btn" type="submit">Adicionar resultado</button></form></div>
+    </div>
+    <div class="panel"><div class="section-title"><h2>Banco local de resultados</h2><div class="stack-mobile"><button class="btn ghost" id="exportCsvBtn">Exportar CSV</button><button class="btn ghost" id="exportJsonBtn">Exportar JSON</button><button class="btn danger" id="clearBtn">Apagar base local</button></div></div><p id="resultCount" class="tip" style="margin-bottom:10px"></p><div class="table-wrap"><table><thead><tr><th>Data/hora</th><th>Jogo</th><th>ID</th><th>Aposta</th><th>Prêmio</th><th>Resultado</th><th>Origem</th><th></th></tr></thead><tbody id="tableBody"></tbody></table></div></div>
+  </section>
+  <section id="windows" class="view hidden">
+    <div class="panel" style="margin-bottom:16px">
+      <div class="section-title"><h2>◷ Análise de janelas de tempo</h2><p>Registro verificável de hipóteses antes dos resultados</p></div>
+      <div class="notice warn"><strong>Sem sinais de lucro garantido.</strong> O histórico não permite determinar o melhor horário para ganhar em um jogo aleatório. Esta ferramenta mede resultados <em>observados</em> por janela e compara hipóteses com dados posteriores. Nenhuma porcentagem daqui equivale a 85–90% de chance comprovada de lucro.</div>
+      <div class="formgrid">
+        <div class="field"><label for="windowGame">Jogo</label><select id="windowGame"><option>Fortune Tiger</option><option>Fortune Ox</option><option>Fortune Rabbit</option></select></div>
+        <div class="field"><label for="windowMinutes">Duração</label><select id="windowMinutes"><option value="3">3 minutos</option><option value="5">5 minutos</option><option value="10">10 minutos</option><option value="15">15 minutos</option></select></div>
+        <div class="field"><label for="windowGoal">Critério de pagamento</label><select id="windowGoal"><option value="positive">Prêmio acima da aposta (lucro no giro)</option><option value="any">Qualquer prêmio acima de zero</option><option value="10">Prêmio ≥ 10× a aposta</option><option value="50">Prêmio ≥ 50× a aposta</option></select></div>
+      </div>
+      <div class="row" style="margin-top:16px"><button class="btn" id="windowBtn">Gerar hipótese de janela</button><button class="btn ghost" id="windowHistoryBtn">Atualizar avaliações</button><a class="btn soft" href="https://3ss.vip" target="_blank" rel="noopener noreferrer" style="text-decoration:none">Abrir 3SS em outra aba ↗</a></div>
+      <div id="windowStatus" class="notice" style="margin-top:16px">Aguardando histórico real. Vá em Resultados para importar um CSV, registrar manualmente ou conecte a extensão no PC. As estatísticas atualizam quando entram rodadas.</div>
+    </div>
+    <div class="grid2">
+      <div class="panel"><div class="section-title"><h2>Estatísticas históricas da janela</h2><p>Somente períodos com registros</p></div><div id="windowMetrics"><div class="empty">Sem dados ainda.</div></div><p class="tip">Dividimos os horários em blocos com a duração escolhida e contamos blocos com pagamentos do tipo selecionado. A taxa muda com o número de giros registrados e não indica que o futuro seguirá o mesmo padrão.</p></div>
+      <div class="panel"><div class="section-title"><h2>Aprendizado e validação</h2><p>Separação cronológica 70%/30%</p></div><div id="windowBacktest"><div class="empty">Aguardando amostras.</div></div><p class="tip">Mínimo de 30 janelas observadas, pelo menos 10 na parte mais recente, antes de mostrar o teste retrospectivo. Resultados incompletos ou seletivos distorcem a análise.</p></div>
+    </div>
+    <div class="panel"><div class="section-title"><h2>Hipóteses registradas</h2><p>Salvas somente neste navegador</p></div><div id="windowLogs"><div class="empty">Nenhuma hipótese registrada.</div></div></div>
+  </section>
+  <section id="audit" class="view hidden">
+    <div class="panel" style="margin-bottom:16px"><div class="section-title"><h2>Relatório estatístico</h2><button id="reportBtn" class="btn">Exportar relatório TXT</button></div><div id="auditEmpty" class="notice">Insira registros verificáveis para gerar a auditoria.</div><div id="auditStats" class="audit-grid hidden"></div></div>
+    <div class="grid2"><div class="panel"><div class="section-title"><h2>Alertas de qualidade</h2><p>Os alertas não comprovam manipulação</p></div><div id="auditFlags"></div></div><div class="panel"><div class="section-title"><h2>Limites desta análise</h2></div><div class="rule"><strong>1. Ausência de dados privados</strong><p>Este programa não vê o sorteio interno, o gerador aleatório ou rodadas não disponibilizadas.</p></div><div class="rule"><strong>2. Seleção dos resultados</strong><p>Registros apenas de vitórias, perdas ou sessões escolhidas criam viés de seleção.</p></div><div class="rule"><strong>3. Intervalo de incerteza</strong><p>O intervalo de 95% assume observações independentes. Prêmios raros podem produzir incerteza enorme.</p></div><div class="rule"><strong>4. Não é detector de fraude</strong><p>Um RTP diferente do divulgado em uma amostra não prova adulteração, e RTP teórico não garante retorno em sessão individual.</p></div></div></div>
+  </section>
+  <section id="connect" class="view hidden">
+    <div class="section-title" style="margin-bottom:18px"><h2>⌁ Central de conexão</h2><p>Integração local opcional para Chrome no Windows</p></div>
+    <div class="grid2">
+      <div class="panel">
+        <div class="section-title"><h2>Chrome Inspector Bridge</h2><span id="bridgeBadge" class="pill zero">DESCONECTADO</span></div>
+        <div class="notice">Este site funciona sozinho para importar e analisar registros. Para tentar capturar o histórico visível da 3SS no PC, instale a extensão incluída no ZIP. A extensão <strong>não lê senhas, cookies ou resultados futuros</strong>.</div>
+        <div class="field"><label for="bridgeId">ID da extensão no Chrome</label><input id="bridgeId" spellcheck="false" autocomplete="off" placeholder="Cole o ID de chrome://extensions" /></div>
+        <div class="field" style="margin-top:13px"><label for="bridgeToken">Código privado de pareamento (gerado pela extensão)</label><input id="bridgeToken" type="password" autocomplete="off" spellcheck="false" placeholder="Cole o código mostrado na extensão" /></div>
+        <div class="row" style="margin-top:14px"><button class="btn" id="bridgeConnect">Conectar extensão</button><button class="btn ghost" id="bridgeSync">Sincronizar agora</button><button class="btn soft" id="bridgeDisconnect">Desconectar</button></div>
+        <div id="bridgeStatus" class="notice warn" aria-live="polite">Nenhuma conexão ativa. O botão de análise já funciona para CSVs e dados manuais.</div>
+        <div class="status-row"><span>Última sincronização</span><strong id="bridgeLast">—</strong></div>
+        <div class="status-row"><span>Novas rodadas recebidas nesta sessão</span><strong id="bridgeNew">0</strong></div>
+      </div>
+      <div class="panel"><div class="section-title"><h2>Configurar a coleta no PC</h2></div>
+        <div class="rule"><strong>1 · Instalar extensão</strong><p>No Chrome, abra <code>chrome://extensions</code>, ative <strong>Modo do desenvolvedor</strong> e clique em <strong>Carregar sem compactação</strong>. Selecione a pasta <code>extensao_chrome</code> do ZIP extraído.</p></div>
+        <div class="rule"><strong>2 · Escolher o jogo</strong><p>Clique no ícone da extensão e selecione Fortune Tiger, Ox ou Rabbit. Copie o código de pareamento e o ID da extensão.</p></div>
+        <div class="rule"><strong>3 · Abrir histórico da 3SS</strong><p>Acesse a conta por você mesmo e mantenha uma tabela de histórico visível na aba do Chrome. A extensão tentará ler periodicamente linhas com data/hora completa, aposta e prêmio.</p></div>
+        <div class="rule"><strong>4 · Conectar o site</strong><p>Cole ID e código à esquerda e toque em Conectar. O painel tentará importar novos registros automaticamente a cada 15 segundos enquanto aberto.</p></div>
+        <div class="notice warn"><strong>Limitação:</strong> a integração é experimental. Se a 3SS usar canvas, iframe em outro domínio ou outro formato de histórico, nenhuma coleta será registrada sem adaptar o extrator. No Android Chrome, extensões comuns não são suportadas; use CSV ou registro manual.</div>
+      </div>
+    </div>
+    <div class="panel"><div class="section-title"><h2>Importar resultados colados</h2><p>Alternativa simples para registros copiados</p></div><p class="tip">Cole um CSV com cabeçalho <code>timestamp,game,round_id,bet,payout</code> (campos adicionais opcionais). Também aceita valores separados por ponto e vírgula.</p><textarea id="pasteData" rows="5" class="paste-box" spellcheck="false" placeholder="timestamp,game,round_id,bet,payout
+2026-10-18T11:04:00,Fortune Tiger,123,1,0"></textarea><div class="row" style="margin-top:12px"><button class="btn" id="pasteImport">Importar linhas coladas</button><button class="btn soft" id="pasteClear">Limpar caixa</button></div></div>
+  </section>
+  <section id="guide" class="view hidden">
+    <div class="grid2"><div class="panel"><div class="section-title"><h2>Alvo cadastrado: 3ss.vip</h2></div><div class="status-row"><span>Domínio de interesse</span><strong class="mono">3ss.vip</strong></div><div class="status-row"><span>Ligação com a plataforma</span><strong class="yellow">Somente via extensão opcional (PC)</strong></div><div class="status-row"><span>Coleta em tempo real</span><strong>Leitura experimental de tabelas visíveis</strong></div><div class="status-row"><span>Fonte dos resultados</span><strong>Manual / CSV / extensão Chrome PC</strong></div><div class="status-row"><span>Armazenamento</span><strong>Este navegador (localStorage)</strong></div><div class="divider"></div><p class="tip">A inclusão do domínio identifica o escopo da investigação; não confirma afiliação, autorização, fraude ou acesso técnico ao site. A página sozinha não pode ler outra aba ou contornar as permissões do navegador. A extensão experimental observa apenas tabelas visíveis nos domínios autorizados; não foi validada na interface real da 3SS.</p></div>
+    <div class="panel"><div class="section-title"><h2>Como coletar evidências</h2></div><div class="rule"><strong>Registrar a rodada</strong><p>Anote data/hora, jogo, valor da aposta, valor total pago e ID da rodada quando visível. Evite apenas registrar rodadas convenientes.</p></div><div class="rule"><strong>Guardar a fonte</strong><p>Preserve recibos, históricos exportados ou capturas permitidas. Remova nome, CPF, senhas, tokens, informações de conta e dados de terceiros antes de compartilhar.</p></div><div class="rule"><strong>Conferir legalidade</strong><p>Consulte o órgão regulador e o status do operador. Não conclua que uma plataforma é ilegal somente pelo nome ou extensão de domínio.</p></div><p><a href="https://www.gov.br/pt-br/servicos/consultar-as-empresas-autorizadas-a-operar-apostas-de-quota-fixa" target="_blank" rel="noopener noreferrer">Consulta oficial do Ministério da Fazenda ↗</a></p></div></div>
+    <div class="panel"><div class="section-title"><h2>Sobre a base e a privacidade</h2></div><p class="tip">Todo cálculo e armazenamento ocorre no dispositivo. Dados no armazenamento do navegador podem ser perdidos se você limpar o histórico. Exporte CSV ou JSON para guardar uma cópia. A versão de demonstração é sintética e aparece identificada. O relatório não constitui perícia certificada.</p></div>
+  </section>
+  <p id="feedback" class="footer" role="status" aria-live="polite">FNC Casino Inspector PRO V7 · Dados locais · Integração opcional · Sem sinais de ganhos comprovados</p>
+</main>
+</div>
+<script>
+(()=>{'use strict';
+const KEY='fnc_casino_inspector_v1_data';const DEMOKEY='fnc_casino_inspector_v1_demo';
+const GAMES=['Fortune Tiger','Fortune Ox','Fortune Rabbit'];
+const $=id=>document.getElementById(id);
+const money=n=>Number.isFinite(n)?new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(n):'—';
+const pct=n=>Number.isFinite(n)?new Intl.NumberFormat('pt-BR',{maximumFractionDigits:2,minimumFractionDigits:2}).format(100*n)+'%':'—';
+const fmtNum=n=>new Intl.NumberFormat('pt-BR').format(n);
+let rows=[];let demo=false;let lastReport=null;
+try{const saved=JSON.parse(localStorage.getItem(KEY)||'[]');if(Array.isArray(saved))rows=saved.filter(x=>x&&GAMES.includes(x.game)&&typeof x.bet==='number'&&x.bet>0&&typeof x.payout==='number'&&x.payout>=0&&Number.isFinite(x.bet)&&Number.isFinite(x.payout)).slice(0,20000);demo=localStorage.getItem(DEMOKEY)==='true'}catch(e){console.warn('Não foi possível ler dados locais',e)}
+function feedback(msg,error=false){$('feedback').textContent=(error?'⚠ ':'✓ ')+msg}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(rows));localStorage.setItem(DEMOKEY,String(demo));return true}catch(e){feedback('Armazenamento cheio. Exporte os dados e remova registros antigos.',true);return false}}
+function view(id){document.querySelectorAll('.view').forEach(x=>x.classList.toggle('hidden',x.id!==id));document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x.dataset.view===id));if(id==='dashboard')drawChart(getFiltered())}
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>view(b.dataset.view)));
+function parseMoney(raw){if(typeof raw==='number')return raw;if(raw===null||raw===undefined)return NaN;let s=String(raw).trim().replace(/\s|R\$/gi,'');if(!s)return NaN;if(s.includes(',')&&s.includes('.')){s=s.lastIndexOf(',')>s.lastIndexOf('.')?s.replace(/\./g,'').replace(',','.'):s.replace(/,/g,'')}else if(s.includes(',')){s=s.replace(',','.')}return /^-?\d+(?:\.\d+)?$/.test(s)?Number(s):NaN}
+function normalizeGame(raw){const s=String(raw||'').toLowerCase().trim();if(s.includes('tiger')||s.includes('tigrinho'))return 'Fortune Tiger';if(s.includes('ox'))return 'Fortune Ox';if(s.includes('rabbit')||s.includes('coelho'))return 'Fortune Rabbit';return null}
+function normalizeUrl(s){s=String(s||'').trim();if(!s)return '';try{const u=new URL(s);return ['https:','http:'].includes(u.protocol)?u.toString():''}catch{return ''}}
+function addRow(obj){if(rows.length>=20000)throw Error('Limite de 20.000 rodadas alcançado. Exporte e limpe sua base.');const bet=parseMoney(obj.bet),payout=parseMoney(obj.payout),game=normalizeGame(obj.game);if(!game||!Number.isFinite(bet)||!Number.isFinite(payout)||bet<=0||payout<0||bet>1e9||payout>1e12)throw Error('Jogo, aposta ou prêmio inválidos.');const timestamp=String(obj.timestamp||'').trim();if(!timestamp||!Number.isFinite(Date.parse(timestamp)))throw Error('Data/hora inválida.');const platform=String(obj.platform||'3ss.vip').trim().toLowerCase();if(platform!=='3ss.vip')throw Error('Este projeto está configurado apenas para 3ss.vip.');const record={uid:crypto.randomUUID?crypto.randomUUID():String(Date.now())+'-'+Math.random().toString(16).slice(2),timestamp,platform:'3ss.vip',game,round_id:String(obj.round_id||'').trim().slice(0,110),bet,payout,source_url:normalizeUrl(obj.source_url),notes:String(obj.notes||'').slice(0,300),demo:!!obj.demo};rows.push(record);return record}
+function getFiltered(){const g=$('game').value;return rows.filter(r=>g==='all'||r.game===g).sort((a,b)=>{const t=Date.parse(a.timestamp)-Date.parse(b.timestamp);return t||a.uid.localeCompare(b.uid)})}
+function stats(data){const n=data.length;if(!n)return null;const totalBet=data.reduce((s,r)=>s+r.bet,0),totalPaid=data.reduce((s,r)=>s+r.payout,0);const win=data.filter(r=>r.payout>0).length;let longest=0,streak=0;for(const r of data){streak=r.payout===0?streak+1:0;longest=Math.max(longest,streak)}let duplicates=0;const seen=new Set();for(const r of data){if(!r.round_id)continue;const id=r.game+'|'+r.round_id;if(seen.has(id))duplicates++;seen.add(id)}const withSource=data.filter(r=>!!r.source_url).length;const withId=data.filter(r=>!!r.round_id).length;return{n,totalBet,totalPaid,rtp:totalPaid/totalBet,win,winRate:win/n,net:totalPaid-totalBet,longest,duplicates,withSource,withId,demo:data.some(r=>r.demo),min:Math.min(...data.map(r=>Date.parse(r.timestamp))),max:Math.max(...data.map(r=>Date.parse(r.timestamp)))}}
+function wilson(success,n){const z=1.95996398454,p=success/n,d=1+z*z/n,c=(p+z*z/(2*n))/d,h=z*Math.sqrt(p*(1-p)/n+z*z/(4*n*n))/d;return [Math.max(0,c-h),Math.min(1,c+h)]}
+function rtpBootstrap(data){if(data.length<30)return null;const n=data.length;const B=400;const results=[];let seed=(n*1103515245+31337)>>>0;function rand(){seed^=seed<<13;seed^=seed>>>17;seed^=seed<<5;return (seed>>>0)/4294967296}for(let b=0;b<B;b++){let bets=0,prizes=0;for(let j=0;j<n;j++){let r=data[Math.floor(rand()*n)];bets+=r.bet;prizes+=r.payout}results.push(prizes/bets)}results.sort((a,b)=>a-b);return[results[Math.floor(B*.025)],results[Math.floor(B*.975)]]}
+function quality(data,s){if(!s)return[];const flags=[];if(s.demo)flags.push({t:'DADOS FICTÍCIOS',c:'warn',d:'A base inclui dados simulados. Não use para fazer alegações sobre a plataforma.'});if(s.n<300)flags.push({t:'AMOSTRA PEQUENA',c:'warn',d:'Menos de 300 registros. Mesmo 300 podem ser insuficientes para testar RTP de caça-níqueis.'});if(s.duplicates>0)flags.push({t:'IDs REPETIDOS',c:'bad',d:`Foram encontrados ${s.duplicates} ID(s) de rodada repetidos no mesmo jogo. Verifique duplicações antes de interpretar RTP.`});if(s.withSource<s.n)flags.push({t:'EVIDÊNCIA INCOMPLETA',c:'warn',d:`${s.n-s.withSource} registro(s) sem URL de fonte. A ausência de URL não significa que a rodada seja falsa.`});if(s.withId<s.n)flags.push({t:'RASTREABILIDADE LIMITADA',c:'warn',d:`${s.n-s.withId} rodada(s) sem identificador. Guarde o ID quando disponível.`});if(s.max-s.min<3600000&&s.n>30)flags.push({t:'JANELA CURTA',c:'warn',d:'Os resultados cobrem menos de uma hora, o que limita interpretações sobre comportamento ao longo do tempo.'});if(!flags.length)flags.push({t:'SEM ALERTAS BÁSICOS DE QUALIDADE',c:'ok',d:'Nenhum problema elementar identificado; isso não comprova legitimidade do sorteio.'});return flags}
+function setText(id,value){$(id).textContent=value}
+function render(){const data=getFiltered(),s=stats(data);$('demoBanner').classList.toggle('hidden',!demo&&!rows.some(r=>r.demo));setText('mCount',s?fmtNum(s.n):'0');setText('mRtp',s?pct(s.rtp):'—');setText('mWin',s?pct(s.winRate):'—');setText('mNet',s?money(s.net):'—');$('mNet').className='value '+(s&&s.net<0?'red':'green');$('resultCount').textContent=`${fmtNum(data.length)} registros exibidos (de ${fmtNum(rows.length)} no navegador). Mostrando até 250 linhas mais recentes.`;let q=$('qualityRows');q.replaceChildren();if(s){const items=[['Com URL de evidência',s.withSource/s.n],['Com ID de rodada',s.withId/s.n],['Rodadas sem duplicidade identificada',1-s.duplicates/s.n]];items.forEach(([label,val])=>{const outer=document.createElement('div');outer.className='status-row';const left=document.createElement('div');left.style.flex='1';const line=document.createElement('div');line.textContent=label+' · '+pct(val);const bar=document.createElement('div');bar.className='mini-bar';const fill=document.createElement('i');fill.style.width=Math.max(0,Math.min(100,val*100))+'%';bar.append(fill);left.append(line,bar);outer.append(left);q.append(outer)});const extra=document.createElement('div');extra.className='notice';extra.textContent=`Maior sequência registrada de rodadas sem prêmio: ${s.longest}. É um indicador descritivo, não sinal de próxima vitória.`;q.append(extra)}else q.innerHTML='<div class="empty">Ainda não há registros.</div>';
+ const interp=$('interpretation');interp.className='notice';if(!s){interp.textContent='Nenhum dado inserido. Registre rodadas observadas ou importe um CSV.'}else{const expected=parseMoney($('expectedRtp').value);let words=`Em ${s.n} rodadas, foram apostados ${money(s.totalBet)} e pagos ${money(s.totalPaid)}. RTP observado: ${pct(s.rtp)}. `;if(s.n>=30){const ci=rtpBootstrap(data);words+=`Intervalo exploratório de 95% via bootstrap: ${pct(ci[0])} a ${pct(ci[1])}. `}else words+='Poucos registros para estimar intervalo exploratório de 95%. ';if($('expectedRtp').value.trim()!==''&&Number.isFinite(expected)&&expected>=0&&expected<=100){words+=`RTP de referência informado: ${pct(expected/100)}. Diferença observada: ${((s.rtp*100)-expected).toFixed(2).replace('.',',')} pontos percentuais. `}words+='Diferenças ou sequências não demonstram fraude; seleção da amostra e volatilidade importam.';if(s.demo)words='ATENÇÃO: EXEMPLO ARTIFICIAL. '+words;interp.textContent=words;if(s.demo||s.n<300)interp.className='notice warn'}
+ drawTable(data);drawChart(data);drawAudit(data,s);drawWindows();lastReport={data,s,flags:quality(data,s)};}
+function makeCell(tr,value){let td=document.createElement('td');td.textContent=value;tr.append(td);return td}
+function drawTable(data){const tb=$('tableBody');tb.replaceChildren();if(!data.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=8;td.className='empty';td.textContent='Nenhuma rodada encontrada. Importe CSV ou adicione manualmente.';tr.append(td);tb.append(tr);return}for(const r of data.slice(-250).reverse()){const tr=document.createElement('tr');let t=Date.parse(r.timestamp);makeCell(tr,Number.isFinite(t)?new Date(t).toLocaleString('pt-BR'):r.timestamp);makeCell(tr,r.game);makeCell(tr,r.round_id||'—');makeCell(tr,money(r.bet));makeCell(tr,money(r.payout));let td=document.createElement('td'),pill=document.createElement('span');pill.className='pill '+(r.demo?'demo':r.payout===0?'zero':'');pill.textContent=r.demo?'DEMO':r.payout>0?'PRÊMIO':'SEM PRÊMIO';td.append(pill);tr.append(td);makeCell(tr,r.source_url?'URL cadastrada':'Sem URL');const action=document.createElement('td');const del=document.createElement('button');del.className='btn soft';del.style.minHeight='30px';del.style.padding='4px 8px';del.textContent='Excluir';del.setAttribute('aria-label','Excluir rodada '+(r.round_id||r.timestamp));del.addEventListener('click',()=>{if(confirm('Excluir esta rodada da base local?')){rows=rows.filter(x=>x.uid!==r.uid);demo=rows.some(x=>x.demo);persist();render()}});action.append(del);tr.append(action);tb.append(tr)}}
+function drawChart(data){const area=$('chart');area.replaceChildren();if(!data.length){let e=document.createElement('div');e.className='empty';e.textContent='Adicione resultados para visualizar o gráfico.';area.append(e);return}let acc=0,values=[0];for(const r of data){acc+=r.payout-r.bet;values.push(acc)}const min=Math.min(...values),max=Math.max(...values),range=max-min||1,w=800,h=248,p=24;const pts=values.map((v,i)=>[(p+(i/(values.length-1))*(w-2*p)),(h-p-(v-min)/range*(h-2*p))]);const ns='http://www.w3.org/2000/svg';const svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox',`0 0 ${w} ${h}`);svg.setAttribute('role','img');svg.setAttribute('aria-label','Linha do saldo acumulado por rodada');const line=document.createElementNS(ns,'path');line.setAttribute('d',pts.map((point,i)=>(i?'L':'M')+point[0].toFixed(2)+' '+point[1].toFixed(2)).join(' '));line.setAttribute('fill','none');line.setAttribute('stroke','#7bffc0');line.setAttribute('stroke-width','2.5');line.setAttribute('stroke-linejoin','round');svg.append(line);if(min<=0&&max>=0){const y=h-p-(0-min)/range*(h-2*p),zero=document.createElementNS(ns,'line');zero.setAttribute('x1',p);zero.setAttribute('x2',w-p);zero.setAttribute('y1',y);zero.setAttribute('y2',y);zero.setAttribute('stroke','#697969');zero.setAttribute('stroke-dasharray','6 7');svg.insertBefore(zero,line)}area.append(svg)}
+function auditBox(title,val,desc){const el=document.createElement('div');el.className='audit-card';const h=document.createElement('h3');h.textContent=title;const v=document.createElement('div');v.className='big';v.textContent=val;const p=document.createElement('p');p.className='tip';p.textContent=desc;el.append(h,v,p);return el}
+function drawAudit(data,s){$('auditEmpty').classList.toggle('hidden',!!s);$('auditStats').classList.toggle('hidden',!s);const p=$('auditStats');p.replaceChildren();const f=$('auditFlags');f.replaceChildren();if(!s){f.innerHTML='<div class="empty">Sem dados para análise.</div>';return}let ci=rtpBootstrap(data);let wins=wilson(s.win,s.n);p.append(auditBox('Apostas computadas',money(s.totalBet),'Apenas registros presentes na base'),auditBox('Prêmios computados',money(s.totalPaid),'Prêmios totais, não lucro'),auditBox('RTP observado',pct(s.rtp),ci?`Intervalo bootstrap 95%: ${pct(ci[0])} – ${pct(ci[1])}`:'Intervalo indisponível para amostras com menos de 30 rodadas'),auditBox('Frequência de prêmio',pct(s.winRate),`Intervalo de Wilson 95%: ${pct(wins[0])} – ${pct(wins[1])}`),auditBox('Maior sequência sem prêmio',String(s.longest),'Somente no conjunto registrado'),auditBox('ID de rodada duplicado',String(s.duplicates),'Por jogo e ID; pode ser importação duplicada'));for(const item of quality(data,s)){const n=document.createElement('div');n.className='notice '+(item.c==='bad'?'bad':item.c==='warn'?'warn':'');const title=document.createElement('strong');title.textContent=item.t;const desc=document.createElement('div');desc.textContent=item.d;n.append(title,desc);f.append(n)}}
+function splitCSV(text){text=text.replace(/^\uFEFF/,'');let first=text.split(/\r?\n/,1)[0]||'';const delimiter=(first.match(/;/g)||[]).length>(first.match(/,/g)||[]).length?';':',';let output=[],row=[],part='',quoted=false;for(let i=0;i<text.length;i++){const c=text[i];if(c==='"'){if(quoted&&text[i+1]==='"'){part+='"';i++}else quoted=!quoted}else if(c===delimiter&&!quoted){row.push(part);part=''}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&text[i+1]==='\n')i++;row.push(part);part='';if(row.some(x=>x.trim()))output.push(row);row=[]}else part+=c}if(quoted)throw Error('CSV contém aspas não fechadas.');row.push(part);if(row.some(x=>x.trim()))output.push(row);return output}
+const HEADERS={timestamp:['timestamp','data','datahora','data_hora','date','datetime'],platform:['platform','plataforma','site'],game:['game','jogo'],round_id:['round_id','rodada','id_rodada','id','round'],bet:['bet','aposta','valor_aposta'],payout:['payout','premio','prêmio','retorno','pagamento'],source_url:['source_url','url','fonte','evidencia','evidência'],notes:['notes','notas','observacoes','observações']};
+function csvRowToObj(headers,cells){let o={};for(const [key,aliases]of Object.entries(HEADERS)){const idx=headers.findIndex(h=>aliases.includes(h));o[key]=idx<0?'':cells[idx]||''}return o}
+$('fileInput').addEventListener('change',async e=>{const file=e.target.files&&e.target.files[0];if(!file)return;try{if(file.size>3_000_000)throw Error('Arquivo maior que 3 MB. Divida os registros.');let csv=splitCSV(await file.text());if(csv.length<2)throw Error('O CSV precisa de cabeçalho e pelo menos uma rodada.');if(csv.length>10001)throw Error('Importe até 10.000 resultados por vez.');const head=csv[0].map(s=>s.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g,''));if(!HEADERS.bet.some(x=>head.includes(x))||!HEADERS.payout.some(x=>head.includes(x))||!HEADERS.game.some(x=>head.includes(x)))throw Error('Cabeçalhos obrigatórios: game, bet e payout.');let ok=0,errors=[],initial=rows.length;for(let i=1;i<csv.length;i++){try{addRow(csvRowToObj(head,csv[i]));ok++}catch(ex){if(errors.length<5)errors.push(`Linha ${i+1}: ${ex.message}`)}}let saved=true;if(ok){demo=rows.some(r=>r.demo);saved=persist();render();view('results')}feedback(`${ok} rodadas importadas. ${csv.length-1-ok} ignoradas.`+(saved?'':' Atenção: armazenamento indisponível; exporte os dados antes de fechar a página.')+(errors.length?' '+errors.join(' | '):''),errors.length>0||!saved)}catch(ex){feedback(ex.message,true)}finally{e.target.value=''}});
+$('importBtn').addEventListener('click',()=>$('fileInput').click());
+function download(name,content,type){const blob=new Blob(['\uFEFF',content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),10000)}
+function csvSafe(v){const str=String(v??'');const safe=/^[=+@\-\t\r]/.test(str)?"'"+str:str;return '"'+safe.replace(/"/g,'""')+'"'}
+function rowsCSV(data){let fields=['timestamp','platform','game','round_id','bet','payout','source_url','notes'];return [fields.join(','),...data.map(r=>fields.map(f=>csvSafe(r[f])).join(','))].join('\r\n')}
+$('templateBtn').addEventListener('click',()=>download('modelo_fnc_inspector.csv','timestamp,platform,game,round_id,bet,payout,source_url,notes\r\n','text/csv;charset=utf-8'));
+$('exportCsvBtn').addEventListener('click',()=>{download('fnc_3ssvip_resultados.csv',rowsCSV(getFiltered()),'text/csv;charset=utf-8');feedback('Arquivo CSV exportado. Filtro de jogo aplicado.')});
+$('exportJsonBtn').addEventListener('click',()=>{download('fnc_3ssvip_resultados.json',JSON.stringify({app:'FNC Casino Inspector V1',platform:'3ss.vip',exported_at:new Date().toISOString(),game_filter:$('game').value,warning:'Dados não verificados independentemente.',rows:getFiltered()},null,2),'application/json');feedback('JSON exportado.')});
+$('manualForm').addEventListener('submit',e=>{e.preventDefault();try{addRow({timestamp:$('formTime').value,platform:'3ss.vip',game:$('formGame').value,bet:$('formBet').value,payout:$('formPayout').value,round_id:$('formRound').value,source_url:$('formSource').value});demo=rows.some(r=>r.demo);const saved=persist();render();$('formRound').value='';$('formPayout').value='';feedback(saved?'Rodada registrada localmente.':'Rodada incluída só nesta sessão. Exporte os dados antes de fechar o app.',!saved)}catch(err){feedback(err.message,true)}});
+$('clearBtn').addEventListener('click',()=>{if(!rows.length)return;if(confirm(`Apagar permanentemente ${rows.length} registros deste navegador? Exporte os dados primeiro.`)){rows=[];demo=false;persist();render();feedback('Base local apagada.')}});
+$('game').addEventListener('change',render);$('expectedRtp').addEventListener('input',render);
+function makeDemo(){if(rows.length&&!confirm('Substituir a base atual por dados de demonstração fictícios? Exporte seus registros reais antes de continuar.'))return;rows=[];let x=123456789;function rand(){x=(1664525*x+1013904223)>>>0;return x/4294967296}const base=Date.now()-120*60000;for(let i=0;i<120;i++){const g=GAMES[i%3];let paid=rand();let payout=paid<.68?0:paid<.90?+(rand()*1.8+.1).toFixed(2):paid<.985?+(rand()*8+1).toFixed(2):+(rand()*90+15).toFixed(2);addRow({timestamp:new Date(base+i*60000).toISOString(),platform:'3ss.vip',game:g,round_id:'DEMO-'+String(i+1).padStart(4,'0'),bet:1,payout,notes:'BASE FICTÍCIA PARA TESTES',demo:true})}demo=true;const saved=persist();render();feedback('120 rodadas FICTÍCIAS carregadas. Não são resultados da 3ss.vip.'+(saved?'':' Armazenamento indisponível: exporte antes de fechar.'),!saved)}
+$('demoBtn').addEventListener('click',makeDemo);
+$('reportBtn').addEventListener('click',()=>{const report=lastReport;if(!report||!report.s){feedback('Importe dados antes de gerar o relatório.',true);return}const{data,s,flags}=report;const ci=rtpBootstrap(data),w=wilson(s.win,s.n);const out=['FNC CASINO INSPECTOR — RELATÓRIO DESCRITIVO','Plataforma declarada: 3ss.vip','Data: '+new Date().toLocaleString('pt-BR'),'Jogo filtrado: '+$('game').value,'IMPORTANTE: Dados registrados manualmente, importados ou extraídos experimentalmente de tabelas visíveis pela extensão; não há confirmação independente de autenticidade.','', 'AMOSTRA','Rodadas: '+s.n,'Início: '+new Date(s.min).toLocaleString('pt-BR'),'Fim: '+new Date(s.max).toLocaleString('pt-BR'),'Apostas totais: '+money(s.totalBet),'Prêmios totais: '+money(s.totalPaid),'Saldo: '+money(s.net),'RTP observado: '+pct(s.rtp),'Intervalo exploratório bootstrap (95%): '+(ci?pct(ci[0])+' a '+pct(ci[1]):'não disponível'),'Rodadas com prêmio: '+pct(s.winRate),'Intervalo Wilson (95%): '+pct(w[0])+' a '+pct(w[1]),'Maior sequência sem prêmio: '+s.longest,'IDs repetidos: '+s.duplicates,'Com evidência URL: '+s.withSource+'/'+s.n,'Marcados como fictícios: '+data.filter(r=>r.demo).length,'','ALERTAS',...flags.map(f=>f.t+': '+f.d),'','LIMITAÇÕES','Estes cálculos não demonstram fraude nem predizem resultados.','Os intervalos pressupõem amostras representativas e observações independentes.','Valores declarados não são autenticação independente da fonte.','A consulta de situação regulatória deve ser feita em fonte oficial.'];download('relatorio_fnc_3ssvip.txt',out.join('\r\n'),'text/plain;charset=utf-8');feedback('Relatório TXT exportado.')});
+
+// Janelas experimentais; em PC pode sincronizar históricos visíveis pela extensão instalada e pareada.
+const WINDOW_KEY='fnc_inspector_web_hypotheses_v1';
+let hypotheses=[];
+try { const h=JSON.parse(localStorage.getItem(WINDOW_KEY)||'[]'); if(Array.isArray(h)) hypotheses=h.slice(-100); } catch(e) {}
+function windowCriterion(r,goal){
+  if(goal==='any') return r.payout>0;
+  if(goal==='positive') return r.payout>r.bet;
+  const m=Number(goal);return r.bet>0&&r.payout/r.bet>=m;
+}
+function observedWindows(game,minutes,goal){
+  const width=minutes*60000, bins=new Map();
+  for(const r of rows){
+    if(r.demo||r.game!==game) continue;
+    const t=Date.parse(r.timestamp);
+    if(!Number.isFinite(t)||t<=0) continue;
+    const b=Math.floor(t/width)*width;
+    let v=bins.get(b);
+    if(!v){v={start:b,n:0,hits:0};bins.set(b,v)}
+    v.n++;
+    if(windowCriterion(r,goal))v.hits++;
+  }
+  return [...bins.values()].sort((a,b)=>a.start-b.start);
+}
+function windowSelected(){
+  return {game:$('windowGame').value,minutes:Number($('windowMinutes').value),goal:$('windowGoal').value};
+}
+function windowTextStatus(msg, warning=true){
+  const el=$('windowStatus');el.textContent=msg;el.className='notice'+(warning?' warn':'');
+}
+function drawWindows(){
+  const {game,minutes,goal}=windowSelected();
+  const ws=observedWindows(game,minutes,goal);
+  const total=ws.length, hits=ws.filter(w=>w.hits>0).length;
+  const spins=ws.reduce((sum,w)=>sum+w.n,0);
+  const target=$('windowMetrics');target.replaceChildren();
+  target.append(auditBox('Rodadas observadas',String(spins),'Somente este jogo, sem dados de demonstração'),auditBox('Janelas com registros',String(total),'Janelas sem registros não são avaliadas'),auditBox('Janelas com ao menos um pagamento do tipo',String(hits),`Critério: ${goal==='positive'?'prêmio maior que aposta':goal==='any'?'prêmio positivo':'≥ '+goal+'× a aposta'}`),auditBox('Frequência histórica',total?pct(hits/total):'—','Somente nos blocos com dados; não é previsão futura'));
+  const back=$('windowBacktest');back.replaceChildren();
+  if(total<30||Math.ceil(total*.3)<10){
+    const p=document.createElement('div');p.className='notice warn';p.textContent=`Ainda não há histórico suficiente para teste temporal: ${total} janelas observadas (mínimo 30).`;back.append(p);
+  } else {
+    const split=Math.floor(total*.7),train=ws.slice(0,split),test=ws.slice(split);
+    const a=train.filter(w=>w.hits>0).length,b=test.filter(w=>w.hits>0).length;
+    const confidence=wilson(b,test.length);
+    back.append(auditBox('Treino histórico',pct(a/train.length),train.length+' janelas mais antigas'),auditBox('Verificação posterior',pct(b/test.length),test.length+' janelas mais recentes'),auditBox('Faixa de confiança 95% (teste)',pct(confidence[0])+' – '+pct(confidence[1]),'Modelo de proporção; pode ser inválido se observações não forem independentes'));
+  }
+  const logs=$('windowLogs');logs.replaceChildren();
+  if(!hypotheses.length){let p=document.createElement('div');p.className='empty';p.textContent='Nenhuma hipótese registrada.';logs.append(p)}
+  else{
+    let holder=document.createElement('div');holder.className='table-wrap';
+    let t=document.createElement('table');t.innerHTML='<thead><tr><th>Emissão</th><th>Jogo</th><th>Intervalo</th><th>Histórico anterior</th><th>Verificação</th></tr></thead>';
+    const body=document.createElement('tbody');
+    for(const h of hypotheses.slice(-30).reverse()){
+      let now=Date.now();let tr=document.createElement('tr');
+      makeCell(tr,new Date(h.issued).toLocaleString('pt-BR'));
+      makeCell(tr,h.game);
+      makeCell(tr,new Date(h.start).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})+' → '+new Date(h.end).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}));
+      makeCell(tr,h.oldRate===null?'Sem validação':pct(h.oldRate));
+      const observed=rows.filter(r=>!r.demo&&r.game===h.game&&Date.parse(r.timestamp)>=h.start&&Date.parse(r.timestamp)<h.end);
+      let result=now<h.end?'Janela não terminada':!observed.length?'Sem dados suficientes da janela':observed.some(r=>windowCriterion(r,h.goal))?'Pagamento observado (amostra parcial)':'Não observado nos registros (amostra parcial)';
+      makeCell(tr,result);
+      body.append(tr);
+    }
+    t.append(body);holder.append(t);logs.append(holder);
+  }
+}
+$('windowGame').addEventListener('change',drawWindows);
+$('windowMinutes').addEventListener('change',drawWindows);
+$('windowGoal').addEventListener('change',drawWindows);
+$('windowHistoryBtn').addEventListener('click',()=>{drawWindows();windowTextStatus('Atualização concluída com os resultados que estão armazenados neste navegador.',false)});
+$('windowBtn').addEventListener('click',()=>{
+  const {game,minutes,goal}=windowSelected();
+  const ws=observedWindows(game,minutes,goal);
+  const split=Math.floor(ws.length*.7),test=ws.slice(split);
+  const validated=ws.length>=30&&test.length>=10;
+  const oldRate=validated?test.filter(w=>w.hits>0).length/test.length:null;
+  const t=Date.now();const future={issued:t,start:t,end:t+minutes*60000,game,minutes,goal,oldRate};
+  hypotheses.push(future);hypotheses=hypotheses.slice(-100);
+  try{localStorage.setItem(WINDOW_KEY,JSON.stringify(hypotheses))}catch(e){windowTextStatus('Sem espaço para guardar o registro. Exporte os resultados.',true)}
+  drawWindows();
+  if(!validated){windowTextStatus(`Hipótese registrada para os próximos ${minutes} minutos, mas ainda faltam janelas históricas para validação. Não há sinal confiável de ganho.`,true)}
+  else{windowTextStatus(`Hipótese registrada por ${minutes} minutos. A frequência histórica em dados posteriores de teste foi ${pct(oldRate)}, mas ela NÃO indica que este horário tem maior chance de pagar. Não é sinal validado de aposta.`,true)}
+});
+
+
+// V7: comparativo descritivo, atualização após qualquer dado novo.
+function drawCompare(){
+  const root=$('gameComparison');root.replaceChildren();
+  for(const g of GAMES){
+    const subset=rows.filter(r=>r.game===g&&!r.demo);
+    const s=stats(subset.sort((a,b)=>Date.parse(a.timestamp)-Date.parse(b.timestamp)));
+    const card=document.createElement('div');card.className='compare-item';
+    const name=document.createElement('div');name.className='game-name';name.textContent=g;
+    const chip=document.createElement('span');chip.className='pill'+(!s?' zero':'');chip.textContent=s?fmtNum(s.n)+' rodadas reais':'Sem histórico real';
+    const big=document.createElement('div');big.className='game-value';big.textContent=s?pct(s.rtp):'—';
+    const lab=document.createElement('div');lab.className='game-label';lab.textContent='RTP observado, não chance de ganhar';
+    const detail=document.createElement('div');detail.className='status-row';
+    const left=document.createElement('span');left.textContent='Saldo registrado';const right=document.createElement('strong');right.textContent=s?money(s.net):'—';right.className=s&&s.net<0?'red':'green';
+    detail.append(left,right);card.append(name,chip,big,lab,detail);root.append(card);
+  }
+}
+const oldRender=render;
+// Em vez de sobrescrever os handlers anteriores, ampliar o render central.
+render=function(){oldRender();drawCompare();};
+$('gotoWindows').addEventListener('click',()=>view('windows'));
+$('gotoConnect').addEventListener('click',()=>view('connect'));
+// Previne IDs de rodada duplicados da mesma origem, inclusive em sincronizações sucessivas.
+const addRowBase=addRow;
+addRow=function(obj){
+  const rid=String(obj.round_id||'').trim(),game=normalizeGame(obj.game);
+  if(game&&rows.some(x=>!x.demo&&x.game===game&&(
+    rid ? (x.round_id===rid) : (!x.round_id&&Date.parse(x.timestamp)===Date.parse(String(obj.timestamp||''))&&x.bet===parseMoney(obj.bet)&&x.payout===parseMoney(obj.payout))
+  )))throw Error('Rodada já registrada');
+  return addRowBase(obj);
+};
+// Importação de dados colados. Os dados são locais e não enviamos credenciais ou histórico a servidores.
+function addCSVText(csvText){
+  const csv=splitCSV(csvText);
+  if(csv.length<2||csv.length>10001)throw Error('Cole um cabeçalho e de 1 a 10.000 linhas de resultados.');
+  const hdr=csv[0].map(x=>x.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g,''));
+  if(!HEADERS.bet.some(x=>hdr.includes(x))||!HEADERS.payout.some(x=>hdr.includes(x))||!HEADERS.game.some(x=>hdr.includes(x)))throw Error('Faltam colunas game, bet ou payout.');
+  let ok=0,dups=0,invalid=0;
+  for(let i=1;i<csv.length;i++)try{addRow(csvRowToObj(hdr,csv[i]));ok++}catch(e){if(e.message.includes('já registrada'))dups++;else invalid++}
+  if(ok){demo=rows.some(x=>x.demo);persist();render();}
+  return {ok,dups,invalid};
+}
+$('pasteImport').addEventListener('click',()=>{
+  try{const res=addCSVText($('pasteData').value);feedback(`Colagem: ${res.ok} novas rodadas; ${res.dups} repetidas; ${res.invalid} inválidas.`,!!res.invalid);if(res.ok)view('results')}
+  catch(e){feedback(e.message,true)}
+});
+$('pasteClear').addEventListener('click',()=>{$('pasteData').value=''});
+// Integração experimental com extensão pareada. A extensão responde apenas a sites GitHub Pages e localhost e exige um segredo.
+const EXTKEY='fnc_bridge_pairing_v7';
+let pair={id:'',token:''},newFromBridge=0,syncInFlight=false;
+try{const e=JSON.parse(localStorage.getItem(EXTKEY)||'{}');if(typeof e.id==='string'&&typeof e.token==='string')pair=e;}catch(e){}
+$('bridgeId').value=pair.id;$('bridgeToken').value=pair.token;
+function bridgeReport(text,bad=true){$('bridgeStatus').textContent=text;$('bridgeStatus').className='notice'+(bad?' warn':'');$('bridgeBadge').textContent=bad?'DESCONECTADO':'CONECTADO';$('bridgeBadge').className='pill'+(bad?' zero':'');}
+function validExtensionId(id){return /^[a-p]{32}$/.test(id)}
+function validToken(token){return /^[a-f0-9]{32,128}$/i.test(token)}
+async function syncBridge(){
+ if(syncInFlight)return;
+ if(!pair.id||!pair.token){bridgeReport('Configure o ID e o código de pareamento da extensão.',true);return}
+ if(!window.chrome||!chrome.runtime||typeof chrome.runtime.sendMessage!=='function'){bridgeReport('Extensões externas não estão disponíveis neste navegador. Utilize o Chrome no Windows.',true);return}
+ syncInFlight=true;
+ try{
+   const reply=await new Promise((resolve,reject)=>{chrome.runtime.sendMessage(pair.id,{kind:'FNC_SYNC',token:pair.token},r=>{const err=chrome.runtime.lastError;if(err)reject(Error(err.message));else resolve(r)})});
+   if(!reply||!reply.ok)throw Error(reply&&reply.error?reply.error:'Extensão não respondeu. Verifique o pareamento.');
+   let count=0,dups=0,invalid=0;
+   for(const rec of (Array.isArray(reply.rows)?reply.rows:[])){
+     try{if(!rec.round_id){if(rows.some(x=>!x.demo&&x.game===normalizeGame(rec.game)&&x.timestamp===rec.timestamp&&x.bet===parseMoney(rec.bet)&&x.payout===parseMoney(rec.payout))) {dups++;continue}}
+       addRow(rec);count++;
+     }catch(e){if(e.message.includes('já registrada'))dups++;else invalid++}
+   }
+   if(count){demo=rows.some(x=>x.demo);persist();render();}
+   newFromBridge+=count;$('bridgeNew').textContent=String(newFromBridge);
+   $('bridgeLast').textContent=new Date().toLocaleTimeString('pt-BR');
+   bridgeReport(`Conectado. ${reply.rows.length} linhas recebidas da extensão, ${count} novas, ${dups} repetidas, ${invalid} rejeitadas. ${reply.lastScan||'Aguardando captura'}.`,false);
+ }catch(e){bridgeReport('Sem conexão: '+e.message,true)}finally{syncInFlight=false}
+}
+$('bridgeConnect').addEventListener('click',()=>{
+ const id=$('bridgeId').value.trim(),token=$('bridgeToken').value.trim();
+ if(!validExtensionId(id)||!validToken(token)){bridgeReport('ID ou código inválido. Copie ambos da extensão instalada.',true);return}
+ pair={id,token};try{localStorage.setItem(EXTKEY,JSON.stringify(pair))}catch(e){}
+ syncBridge();
+});
+$('bridgeSync').addEventListener('click',syncBridge);
+$('bridgeDisconnect').addEventListener('click',()=>{pair={id:'',token:''};$('bridgeId').value='';$('bridgeToken').value='';try{localStorage.removeItem(EXTKEY)}catch(e){}bridgeReport('Pareamento removido deste navegador.',true)});
+setInterval(()=>{if(pair.id&&pair.token&&document.visibilityState==='visible')syncBridge()},15000);
+if(pair.id&&pair.token)setTimeout(syncBridge,1000);
+
+const now=new Date();now.setMinutes(now.getMinutes()-now.getTimezoneOffset());$('formTime').value=now.toISOString().slice(0,16);
+render();
+})();
+</script>
+<script>if("serviceWorker" in navigator && location.protocol.startsWith("http")){addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}));}</script>
+</body>
+</html>
