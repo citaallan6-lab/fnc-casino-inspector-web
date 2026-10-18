@@ -1,6 +1,6 @@
 'use strict';
-const CACHE='fnc-inspector-pro-v7';
-const FILES=['./','./index.html','./manifest.webmanifest','./icon.svg'];
+const CACHE='fnc-inspector-pro-v10';
+const FILES=['./','./index.html','./manifest.webmanifest','./icon.svg','./vision.js','./ai_engine.js','./ai_panel.js','./predict_engine.js','./predict_panel.js'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(names=>Promise.all(names.filter(n=>n!==CACHE).map(n=>caches.delete(n)))));self.clients.claim()});
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==self.location.origin)return;

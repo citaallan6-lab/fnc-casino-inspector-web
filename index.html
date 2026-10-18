@@ -4,17 +4,29 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#070d0b" />
-<title>FNC Inspector PRO | Web</title>
+<title>FNC Inspector PRO V10 | IA Preditiva</title>
 <style>
 :root{color-scheme:dark;--bg:#070e0b;--panel:#0d1914;--panel2:#10221a;--stroke:#254636;--green:#7bffc0;--text:#e8fff0;--muted:#93b5a2;--yellow:#ffdf88;--red:#ff8181;--shadow:0 15px 50px rgba(0,0,0,.3)}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -40%,#184830 0%,transparent 54%),var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
 button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}a{color:var(--green)}code{color:#b9fbd4}h1,h2,h3,p{margin:0}small{color:var(--muted)}.layout{display:grid;grid-template-columns:238px minmax(0,1fr);min-height:100vh}.sidebar{background:#09140f;border-right:1px solid var(--stroke);padding:25px 17px;display:flex;flex-direction:column;gap:18px;position:sticky;top:0;height:100vh}.logo{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.09em}.logo-mark{width:43px;height:43px;border:1px solid #53d994;border-radius:14px;background:#102b1d;display:grid;place-items:center;font:900 22px monospace;color:var(--green);box-shadow:0 0 20px #33b27825}.logo small{display:block;letter-spacing:.16em;font-weight:500}.side-label{padding:8px 11px;color:#64917a;font-size:10px;letter-spacing:.2em}.nav{display:flex;flex-direction:column;gap:7px}.nav button{border:1px solid transparent;background:transparent;text-align:left;color:var(--muted);border-radius:12px;padding:12px 14px}.nav button.active{background:#163525;color:var(--green);border-color:#2b6745}.nav button:hover{background:#14291e;color:var(--text)}.sidebar-footer{margin-top:auto;font-size:11px;color:#71917e}.sidebar-footer strong{color:var(--green)}.main{padding:35px max(26px,4vw) 60px;max-width:1540px;width:100%;margin:0 auto}.heading{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;flex-wrap:wrap;margin-bottom:26px}.eyebrow{color:var(--green);font:600 11px monospace;letter-spacing:.24em;margin-bottom:10px}.heading h1{font-size:clamp(29px,3vw,43px);letter-spacing:-.045em;line-height:1.1}.sub{color:var(--muted);max-width:760px;margin-top:10px}.flag{background:#14261d;border:1px solid #385947;border-radius:999px;padding:8px 12px;color:#bee6ca;font-size:12px;white-space:nowrap}.flag::before{content:'●';color:var(--green);margin-right:8px}.panel{background:linear-gradient(145deg,#102018cc,#0b1813f2);border:1px solid var(--stroke);border-radius:17px;box-shadow:var(--shadow);padding:21px}.section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:17px;flex-wrap:wrap}.section-title h2{font-size:16px;font-weight:750}.section-title p{color:var(--muted);font-size:12px}.banner{border:1px solid #6f5b30;color:#ffe1a0;background:#292317;padding:12px 15px;border-radius:11px;margin-bottom:20px}.banner strong{color:#ffebbd}.filters{display:flex;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:18px}.field{display:flex;flex-direction:column;gap:6px;flex:1;min-width:170px}.field>label{color:var(--muted);font-size:12px}.field input,.field select,.field textarea,.inline-input{background:#091710;color:var(--text);border:1px solid #35634a;border-radius:9px;padding:11px 12px;outline:none;min-width:0;width:100%}.field input:focus,.field select:focus,.field textarea:focus{border-color:#87fac1;box-shadow:0 0 0 2px #87fac11e}.field textarea{min-height:100px;resize:vertical}.btn{color:#07190f;background:var(--green);border:1px solid var(--green);font-weight:750;border-radius:10px;padding:11px 15px;min-height:42px}.btn:hover{filter:brightness(1.07)}.btn.ghost{color:var(--green);background:#10251a;border-color:#356c4b}.btn.soft{background:transparent;border-color:#456454;color:var(--text)}.btn.danger{background:#362020;border-color:#945353;color:#ffb3b3}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}.metric{padding:20px;min-height:140px}.metric .caption{color:var(--muted);font-size:12px}.metric .value{font-size:clamp(23px,2.6vw,35px);font-weight:780;letter-spacing:-.05em;margin-top:12px}.metric .hint{color:#a5beaf;margin-top:4px;font-size:11px}.green{color:var(--green)}.yellow{color:var(--yellow)}.red{color:var(--red)}.grid2{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,1fr);gap:17px;margin-bottom:18px}.chart-area{min-height:245px;display:flex;align-items:center}.chart-area svg{width:100%;height:auto;max-height:265px}.status-row{border-top:1px solid #294535;padding:12px 0;display:flex;gap:10px;justify-content:space-between}.status-row:first-of-type{border-top:none}.status-row span:first-child{color:var(--muted)}.status-row span:last-child{text-align:right}.notice{padding:13px 14px;border:1px solid #33583f;border-radius:10px;background:#12271a;color:#c7e3ce;margin:12px 0}.notice.warn{border-color:#70603b;background:#292317;color:#ffe1a0}.notice.bad{border-color:#7d4141;background:#271718;color:#ffb6b6}.table-wrap{overflow:auto;max-height:500px}table{border-collapse:collapse;width:100%;min-width:750px;text-align:left}th{color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.08em}th,td{border-bottom:1px solid #254235;padding:12px 9px}td{font-size:12px}tr:last-child td{border-bottom:none}.pill{display:inline-flex;align-items:center;border:1px solid #39724e;background:#153523;color:#9affc2;padding:3px 9px;border-radius:20px;font-size:11px}.pill.zero{border-color:#56563e;background:#252719;color:#f6d793}.pill.demo{border-color:#8d6539;background:#342616;color:#ffe3a6}.hidden{display:none!important}.empty{padding:33px 16px;text-align:center;color:var(--muted)}.formgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.tip{font-size:12px;color:var(--muted)}.rule{padding:16px;border:1px solid #284733;background:#101e17;border-radius:12px;margin-bottom:11px}.rule strong{display:block;font-size:13px;margin-bottom:5px}.rule p{color:#b1cabb;font-size:12px}.divider{height:1px;background:var(--stroke);margin:21px 0}.mini-bar{height:8px;background:#193022;border-radius:20px;overflow:hidden;margin-top:7px}.mini-bar i{display:block;height:100%;background:var(--green);border-radius:20px}.audit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.audit-card{padding:15px;background:#0a1c12;border:1px solid #294536;border-radius:11px}.audit-card h3{font-size:13px;margin-bottom:9px}.audit-card .big{font-weight:800;font-size:25px}.vstack{display:flex;flex-direction:column;gap:13px}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.footer{font-size:12px;color:#7fa58d;margin-top:24px}.source-head{font-size:12px;color:#98bba5;text-transform:uppercase;letter-spacing:.1em}.file-input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none} .kbd{padding:3px 6px;border-radius:5px;background:#183723;font-family:monospace;color:#91ddac}.stack-mobile{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 @media(max-width:1100px){.grid4{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}}@media(max-width:750px){.layout{display:block}.sidebar{height:auto;position:static;padding:13px;gap:9px}.logo-mark{width:32px;height:32px;border-radius:8px;font-size:18px}.side-label,.sidebar-footer{display:none}.nav{flex-direction:row;overflow-x:auto;gap:5px}.nav button{white-space:nowrap;font-size:12px;padding:9px 10px}.main{padding:22px 13px 50px}.panel{padding:16px;border-radius:12px}.grid4{gap:9px}.metric{padding:14px;min-height:125px}.formgrid,.audit-grid{grid-template-columns:1fr}.field{min-width:125px}.filters{align-items:stretch}.heading{margin-bottom:18px}.heading h1{font-size:29px}}
 
-/* Pro V7 enhancements */
+/* Pro V8 enhancements */
 body{background:radial-gradient(circle at 78% -12%,rgba(34,115,70,.27),transparent 31%),radial-gradient(circle at 14% 68%,rgba(10,75,52,.18),transparent 34%),#060c09}
 .sidebar{background:linear-gradient(180deg,#08140f,#060d09);box-shadow:12px 0 50px #0003}.logo-mark{box-shadow:0 0 34px #34e38a29,inset 0 0 18px #36ac6920}.heading{padding:6px 0 5px}.heading h1{font-weight:850}.panel{transition:border-color .18s ease}.panel:hover{border-color:#376d4d}.btn{transition:transform .16s ease,filter .16s ease}.btn:hover{transform:translateY(-1px)}.top-hero{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin:0 0 20px;padding:26px 26px 26px 29px;border:1px solid #2f6a48;border-radius:17px;background:linear-gradient(105deg,#113c28cc,#102118bb 52%,#07160e),repeating-linear-gradient(90deg,transparent 0 40px,#ffffff04 40px 41px);box-shadow:0 20px 55px #0003;position:relative;overflow:hidden}.top-hero:after{content:'◎';position:absolute;right:14%;top:-84px;color:#72fba612;font:320px/1 monospace;pointer-events:none}.top-hero h2{font-size:clamp(20px,2.6vw,31px);letter-spacing:-.04em}.top-hero h2 span{color:var(--green)}.top-hero p{max-width:620px;color:#9dbaaa;margin-top:8px;font-size:12px;line-height:1.65}.hero-actions{display:flex;gap:9px;position:relative;z-index:1;flex-wrap:wrap}.compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.compare-item{padding:17px 18px;background:linear-gradient(145deg,#0b2317,#0b1912);border:1px solid #294e38;border-radius:13px}.compare-item .game-name{font-weight:800;margin-bottom:12px}.compare-item .game-value{font-size:25px;font-weight:850;letter-spacing:-.04em}.compare-item .game-label{font-size:11px;color:var(--muted);margin:5px 0 13px}.compare-item .pill{margin-bottom:8px}.paste-box{width:100%;resize:vertical;min-height:122px;margin-top:12px;border:1px solid #38634d;background:#0a1911;color:var(--text);padding:14px;border-radius:11px;font-family:ui-monospace,monospace;font-size:12px}.paste-box:focus{outline:2px solid #70e9a5}.warning-note{color:#ebd4a2;font-size:11px}
 @media(max-width:1000px){.compare-grid{grid-template-columns:1fr}.hero-actions{width:100%}}@media(max-width:750px){.top-hero{padding:17px}.top-hero:after{display:none}.compare-grid{grid-template-columns:1fr}}
+
+.vision-viewport{position:relative;background:#030905;border:1px solid #315e43;border-radius:13px;overflow:hidden;aspect-ratio:16/9;width:100%;display:flex;align-items:center;justify-content:center}
+.vision-viewport video{width:100%;height:100%;object-fit:contain;display:block}
+.vision-viewport canvas{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair;touch-action:none}
+.vision-placeholder{position:absolute;max-width:390px;text-align:center;pointer-events:none;color:#89b99b;padding:20px}
+.vision-check{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:12px;color:#c1ead3}.vision-check input{width:17px;height:17px;accent-color:var(--green)}
+.vision-log{max-height:220px;overflow:auto;border:1px solid #294f39;border-radius:10px;padding:10px;background:#07130b;font:12px/1.6 ui-monospace,monospace;color:#b8ddc8}.vision-log p{padding:5px 0;border-bottom:1px solid #1d3626}
+/* V9: central híbrida de auditoria */
+.ai-highlight{border-color:#3e7756!important;background:radial-gradient(circle at 90% 10%,#1b513429,transparent 45%),#0a1c12!important}
+.ai-recommendation{font-size:clamp(21px,3vw,30px);line-height:1.2;font-weight:850;letter-spacing:-.035em;color:#f3dca2;margin:21px 0 15px;max-width:570px}
+#aiQuality .rule{margin:0}#aiMode{font-weight:700}#ai .top-hero{background:linear-gradient(112deg,#0d3926,#0b1d15)}
+@media(max-width:750px){#ai .row .btn{flex:1 1 44%}#aiMode{font-size:10px;white-space:normal}}
 </style>
 <meta name="description" content="FNC Inspector PRO: painel de auditoria de históricos, RTP observado, análise de janelas e coleta opcional no Chrome do PC." />
 <link rel="manifest" href="./manifest.webmanifest" />
@@ -23,13 +35,16 @@ body{background:radial-gradient(circle at 78% -12%,rgba(34,115,70,.27),transpare
 <body>
 <div class="layout">
 <aside class="sidebar">
-  <div class="logo"><div class="logo-mark">F</div><div>FNC INSPECTOR<small>CASINO // PRO V7</small></div></div>
+  <div class="logo"><div class="logo-mark">F</div><div>FNC INSPECTOR<small>CASINO // PRO V9</small></div></div>
   <div class="side-label">ÁREA DE INVESTIGAÇÃO</div>
   <div class="nav" role="navigation" aria-label="Seções">
     <button data-view="dashboard" class="active">◈ Visão geral</button>
     <button data-view="results">▤ Resultados</button>
     <button data-view="windows">◷ Janelas</button>
     <button data-view="audit">⌕ Auditoria</button>
+    <button data-view="vision">◉ FNC Vision OCR</button>
+    <button data-view="ai">◇ Central IA V9</button>
+    <button data-view="predict">✧ IA Preditiva V10</button>
     <button data-view="connect">⌁ Conectar Chrome</button>
     <button data-view="guide">⚙ Fontes e ajuda</button>
   </div>
@@ -47,7 +62,7 @@ body{background:radial-gradient(circle at 78% -12%,rgba(34,115,70,.27),transpare
   <section id="dashboard" class="view">
     <div class="top-hero">
       <div><div class="eyebrow">OPERAÇÃO // LEITURA E AUDITORIA</div><h2>Central de inteligência <span>FNC</span></h2><p>Resultados reais quando disponíveis. O motor recalcula estatísticas ao adicionar ou receber novas rodadas. Nenhum dado de jogo é inventado.</p></div>
-      <div class="hero-actions"><button class="btn" id="gotoWindows">Analisar janelas ↗</button><button class="btn soft" id="gotoConnect">Conectar histórico</button></div>
+      <div class="hero-actions"><button class="btn" id="gotoAI">Abrir Central IA V9 ↗</button><button class="btn ghost" id="gotoWindows">Analisar janelas ↗</button><button class="btn soft" id="gotoConnect">Conectar histórico</button></div>
     </div>
     <div class="grid4">
       <div class="panel metric"><div class="caption">Rodadas registradas</div><div class="value" id="mCount">0</div><div class="hint">Fonte: registros importados</div></div>
@@ -87,6 +102,113 @@ body{background:radial-gradient(circle at 78% -12%,rgba(34,115,70,.27),transpare
     </div>
     <div class="panel"><div class="section-title"><h2>Hipóteses registradas</h2><p>Salvas somente neste navegador</p></div><div id="windowLogs"><div class="empty">Nenhuma hipótese registrada.</div></div></div>
   </section>
+
+  <section id="ai" class="view hidden">
+    <div class="top-hero"><div><div class="eyebrow">FNC HYBRID AI // INSPEÇÃO AUTOMÁTICA</div><h2>Robô coleta. <span>Motor estatístico confere.</span></h2><p>Resultados entram pelo Vision OCR ou importação; esta central atualiza a análise automaticamente e testa se um horário histórico se mantém em dados posteriores. Nenhum horário é recomendado sem vantagem verificada.</p></div><span id="aiMode" class="pill">ATIVO · REAVALIA A CADA NOVA RODADA</span></div>
+    <div class="notice warn"><strong>Sobre os horários para jogar:</strong> jogos com gerador aleatório não oferecem horários de ganho previsíveis a partir do histórico. Mesmo uma diferença estatística entre horários não comprova uma vantagem para apostas reais. Esta central não cria sinais falsos nem opera apostas.</div>
+    <div class="panel" style="margin-bottom:16px">
+       <div class="section-title"><h2>Configuração e monitoramento</h2><p>Análise automática local, sem chave de API</p></div>
+       <div class="row">
+         <div class="field" style="max-width:280px"><label for="aiGame">Jogo investigado</label><select id="aiGame"><option>Fortune Tiger</option><option>Fortune Ox</option><option>Fortune Rabbit</option></select></div>
+         <button id="aiRefresh" class="btn">Reanalisar dados</button><button id="aiToggle" class="btn ghost">Pausar análises</button><button id="aiOpenVision" class="btn soft">Abrir robô Vision</button><button id="aiExport" class="btn soft">Exportar auditoria JSON</button>
+       </div>
+       <div id="aiStatus" class="notice warn" aria-live="polite">Aguardando registros reais para análise automática.</div>
+    </div>
+    <div class="grid4">
+      <div class="panel metric"><div class="caption">Rodadas reais analisadas</div><div id="aiAnalyzed" class="value green">0</div><div class="hint">Não inclui demonstrações</div></div>
+      <div class="panel metric"><div class="caption">Dias cobertos</div><div id="aiDays" class="value">0</div><div class="hint">Importante para comparar horários</div></div>
+      <div class="panel metric"><div class="caption">Giros com prêmio maior que aposta</div><div id="aiProfit" class="value">—</div><div class="hint">Frequência observada, não previsão</div></div>
+      <div class="panel metric"><div class="caption">Última análise</div><div id="aiCheckTime" class="value" style="font-size:23px">—</div><div class="hint">Revisão local <span id="aiRevision">0</span></div></div>
+    </div>
+    <div class="grid2">
+      <div class="panel ai-highlight"><div class="section-title"><h2>Decisão responsável</h2><span class="pill zero">SEM GARANTIA DE PREVISÃO</span></div>
+         <div class="caption">Jogo monitorado</div><h3 id="aiGameLabel" style="margin-top:4px">Fortune Tiger</h3>
+         <div id="aiRecommendation" class="ai-recommendation">Nenhum horário confiável para jogar</div>
+         <p id="aiReason" class="tip" style="font-size:13px;line-height:1.7">O motor aguarda dados para verificar possíveis diferenças entre horários.</p>
+         <div class="divider"></div><div id="aiSummary" class="tip">Nenhuma análise disponível.</div>
+      </div>
+      <div class="panel"><div class="section-title"><h2>Comparação temporal</h2><p>Treino 70% · verificação cronológica 30%</p></div>
+        <div class="status-row"><span>Faixa com maior diferença no treino</span><strong id="aiCandidate">—</strong></div>
+        <div class="status-row"><span>Giros com lucro na faixa (teste posterior)</span><strong id="aiTest">—</strong></div>
+        <div class="status-row"><span>Demais horários (teste posterior)</span><strong id="aiBaseline">—</strong></div>
+        <div id="aiCandidateNote" class="notice">Aguardando quantidade suficiente de registros.</div>
+        <p class="tip">A faixa é selecionada em dados antigos e confrontada com novos resultados. Os percentuais variam com quantos giros você fez, com a amostragem e com a variância; isto não determina o momento certo de jogar.</p>
+      </div>
+    </div>
+    <div class="panel"><div class="section-title"><h2>Conferência da qualidade pelo motor</h2><p>Alertas sobre OCR, período e rastreabilidade</p></div><div id="aiQuality" class="vstack"></div></div>
+  </section>
+
+
+  <section id="predict" class="view hidden">
+    <div class="top-hero"><div><div class="eyebrow">FNC V10 // APRENDIZADO DE MÁQUINA LOCAL</div><h2>IA Preditiva <span>com avaliação real.</span></h2><p>Modelo de regressão logística treinado com rodadas anteriores, com validação temporal. Aprende novos padrões quando entram resultados — sem conexão a nenhuma API paga.</p></div><span class="pill zero">PREVISÃO EXPERIMENTAL</span></div>
+    <div class="notice warn"><strong>Não é sinal de entrada nem recomendação de aposta.</strong> Em jogos aleatórios, o histórico não prevê o próximo giro. Uma porcentagem calculada pelo modelo não representa chance de lucro comprovada. Pagamento positivo também não significa lucro.</div>
+    <div class="panel" style="margin-bottom:17px"><div class="section-title"><h2>Treinar e analisar próximo giro</h2><p>Atualização automática quando chegam novos registros</p></div>
+      <div class="filters"><div class="field"><label for="predGame">Jogo</label><select id="predGame"><option>Fortune Tiger</option><option>Fortune Ox</option><option>Fortune Rabbit</option></select></div>
+      <div class="field"><label for="predTarget">Evento que a IA estima</label><select id="predTarget"><option value="any">Qualquer pagamento maior que zero</option><option value="profit">Pagamento maior que a aposta (lucro no giro)</option><option value="big">Pagamento 10x ou mais</option></select></div>
+      <button class="btn" id="predRefresh">Reanalisar com novos dados</button><button class="btn ghost" id="predVision">Abrir captura Vision</button></div>
+      <div id="predStatus" class="notice warn" aria-live="polite">Aguardando resultados reais.</div>
+    </div>
+    <div class="grid4">
+      <div class="panel metric"><div class="caption">Rodadas reais para treino</div><div id="predCount" class="value green">0</div><div class="hint">Sem demonstrações • mínimo 400</div></div>
+      <div class="panel metric"><div class="caption">Dias de histórico</div><div id="predDays" class="value">0</div><div class="hint">Cobertura temporal</div></div>
+      <div class="panel metric"><div class="caption">Probabilidade calculada pela IA</div><div id="predML" class="value">—</div><div class="hint">Para próximo giro, NÃO chance garantida</div></div>
+      <div class="panel metric"><div class="caption">Frequência histórica de referência</div><div id="predBase" class="value">—</div><div class="hint">Compare com a previsão da IA</div></div>
+    </div>
+    <div class="grid2"><div class="panel"><div class="section-title"><h2>Resultado do modelo</h2><span class="pill zero" id="predQuality">SEM VANTAGEM VALIDADA</span></div>
+       <p class="tip" id="predDetail">O modelo precisa de resultados reais antes de calcular.</p>
+       <div class="divider"></div>
+       <div class="status-row"><span>Erro Brier • modelo vs referência (menor é melhor)</span><strong id="predBrier">—</strong></div>
+       <div class="status-row"><span>Classificação simples • modelo vs referência</span><strong id="predAccuracy">—</strong></div>
+       <p class="tip">Os conjuntos são divididos em ordem cronológica: treino 60%, validação 20% e teste 20%. O teste é retrospectivo, não uma prova de desempenho futuro. Reavaliações após cada rodada podem alterar esses resultados.</p>
+       <div class="row" style="margin-top:17px"><button id="predSave" class="btn" disabled>Registrar previsão ANTES do próximo giro</button><button id="predExport" class="btn soft">Exportar previsões</button></div>
+    </div>
+    <div class="panel"><div class="section-title"><h2>Conferência automática</h2><p>Qualidade da amostra</p></div><div id="predQualityList" class="vstack"></div>
+       <div class="rule"><strong>Como este modelo trabalha</strong><p>Reconsidera os últimos resultados, sequências e horário em um classificador logístico regularizado; não possui acesso ao RNG nem ao servidor do cassino. O modelo será comparado a uma previsão constante baseada na frequência dos ganhos.</p></div>
+    </div></div>
+    <div class="panel"><div class="section-title"><h2>Previsões registradas antes das rodadas</h2><p>Testes prospectivos, sem editar a previsão original</p></div>
+      <div id="predHistory" class="vstack">Nenhuma previsão cadastrada.</div><p id="predProspective" class="tip" style="margin-top:16px"></p>
+      <div class="notice warn">Uma previsão só será avaliada quando chegar uma rodada com horário posterior ao registro. O aplicativo não verifica se o OCR leu todas as derrotas; portanto, confira a integridade da coleta antes de interpretar as métricas.</div>
+    </div>
+  </section>
+
+  <section id="vision" class="view hidden">
+    <div class="top-hero">
+      <div><div class="eyebrow">FNC VISION // CAPTURA COM PERMISSÃO</div><h2>Leitura visual <span>de rodadas</span></h2><p>Compartilhe somente a aba do jogo. Ajuste as áreas de aposta, prêmio e rolos. O OCR lê números visíveis; a detecção de fim de giro é experimental e deve ser conferida.</p></div>
+      <div class="hero-actions"><span class="pill zero" id="visionBadge">CAPTURA PARADA</span><button id="visionStart" class="btn">◉ Compartilhar aba do jogo</button><button id="visionStop" class="btn soft" disabled>Parar</button></div>
+    </div>
+    <div class="notice warn"><strong>Dados reais, sem promessa de previsão.</strong> O monitor só registra o que aparece na tela depois dos giros. A captura automática pode perder giros ou interpretar números errados; confirme os registros. Não é possível deduzir o próximo prêmio de um gerador aleatório seguro. O serviço de OCR carrega arquivos de uma biblioteca externa na primeira utilização.</div>
+    <div class="grid2">
+      <div class="panel">
+        <div class="section-title"><h2>Visualização da aba compartilhada</h2><p>Arraste sobre a imagem para marcar uma área</p></div>
+        <div id="visionViewport" class="vision-viewport">
+          <video id="visionVideo" autoplay muted playsinline></video>
+          <canvas id="visionOverlay" aria-label="Área para calibrar as caixas de OCR"></canvas>
+          <div id="visionPlaceholder" class="vision-placeholder">Clique em “Compartilhar aba do jogo” e escolha a aba da 3SS no Chrome.</div>
+        </div>
+        <p class="tip" style="margin-top:10px">Nenhuma senha ou informação de conta deve ser incluída nas áreas do OCR. As caixas são salvas neste navegador.</p>
+        <div class="row" style="margin-top:12px"><button class="btn ghost" id="visionRead" disabled>Ler valores agora</button><button class="btn soft" id="visionResetBoxes">Limpar áreas</button><button class="btn soft" id="visionDownload">Exportar observações</button></div>
+        <div id="visionMessage" class="notice">Aguardando autorização de captura.</div>
+      </div>
+      <div class="panel">
+        <div class="section-title"><h2>Configurar e acompanhar</h2><p>Fortune Tiger, Ox e Rabbit</p></div>
+        <div class="formgrid" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <div class="field"><label for="visionGame">Jogo aberto</label><select id="visionGame"><option>Fortune Tiger</option><option>Fortune Ox</option><option>Fortune Rabbit</option></select></div>
+          <div class="field"><label for="visionBox">Marcar região na prévia</label><select id="visionBox"><option value="bet">1 · Valor da aposta</option><option value="payout">2 · Prêmio do giro</option><option value="reels">3 · Rolos em movimento</option></select></div>
+        </div>
+        <div class="rule" style="margin-top:12px"><strong>Calibração obrigatória</strong><p>Selecione a região 1 e arraste sobre o número da aposta. Faça o mesmo na região 2 (prêmio). Para registrar automaticamente giros, selecione a região 3 e marque o centro dos rolos, evitando relógios e animações permanentes.</p></div>
+        <div class="status-row"><span>Aposta reconhecida</span><strong id="visionBet">—</strong></div>
+        <div class="status-row"><span>Prêmio reconhecido</span><strong id="visionPayout">—</strong></div>
+        <div class="status-row"><span>Movimento dos rolos</span><strong id="visionMotion">—</strong></div>
+        <div class="status-row"><span>Rodadas adicionadas nesta sessão</span><strong id="visionSaved">0</strong></div>
+        <div class="row" style="margin-top:14px"><label class="vision-check"><input id="visionAuto" type="checkbox" /> Salvar automaticamente quando o giro terminar <small>(experimental)</small></label></div>
+        <div class="row" style="margin-top:14px"><button class="btn" id="visionCommit" disabled>Confirmar e salvar resultado</button><button class="btn ghost" id="visionWindows">Analisar janelas</button></div>
+        <p class="tip" style="margin-top:12px">Para resultados completos, inclusive giros sem prêmio, é necessário detectar corretamente o início e o fim de cada giro. Sem isso, a base pode ficar enviesada e não serve para medir taxa de vitória.</p>
+        <div class="divider"></div>
+        <div class="section-title"><h2>Eventos da captura</h2><p>Últimos eventos reconhecidos</p></div><div id="visionLog" class="vision-log" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
   <section id="audit" class="view hidden">
     <div class="panel" style="margin-bottom:16px"><div class="section-title"><h2>Relatório estatístico</h2><button id="reportBtn" class="btn">Exportar relatório TXT</button></div><div id="auditEmpty" class="notice">Insira registros verificáveis para gerar a auditoria.</div><div id="auditStats" class="audit-grid hidden"></div></div>
     <div class="grid2"><div class="panel"><div class="section-title"><h2>Alertas de qualidade</h2><p>Os alertas não comprovam manipulação</p></div><div id="auditFlags"></div></div><div class="panel"><div class="section-title"><h2>Limites desta análise</h2></div><div class="rule"><strong>1. Ausência de dados privados</strong><p>Este programa não vê o sorteio interno, o gerador aleatório ou rodadas não disponibilizadas.</p></div><div class="rule"><strong>2. Seleção dos resultados</strong><p>Registros apenas de vitórias, perdas ou sessões escolhidas criam viés de seleção.</p></div><div class="rule"><strong>3. Intervalo de incerteza</strong><p>O intervalo de 95% assume observações independentes. Prêmios raros podem produzir incerteza enorme.</p></div><div class="rule"><strong>4. Não é detector de fraude</strong><p>Um RTP diferente do divulgado em uma amostra não prova adulteração, e RTP teórico não garante retorno em sessão individual.</p></div></div></div>
@@ -120,7 +242,7 @@ body{background:radial-gradient(circle at 78% -12%,rgba(34,115,70,.27),transpare
     <div class="panel"><div class="section-title"><h2>Como coletar evidências</h2></div><div class="rule"><strong>Registrar a rodada</strong><p>Anote data/hora, jogo, valor da aposta, valor total pago e ID da rodada quando visível. Evite apenas registrar rodadas convenientes.</p></div><div class="rule"><strong>Guardar a fonte</strong><p>Preserve recibos, históricos exportados ou capturas permitidas. Remova nome, CPF, senhas, tokens, informações de conta e dados de terceiros antes de compartilhar.</p></div><div class="rule"><strong>Conferir legalidade</strong><p>Consulte o órgão regulador e o status do operador. Não conclua que uma plataforma é ilegal somente pelo nome ou extensão de domínio.</p></div><p><a href="https://www.gov.br/pt-br/servicos/consultar-as-empresas-autorizadas-a-operar-apostas-de-quota-fixa" target="_blank" rel="noopener noreferrer">Consulta oficial do Ministério da Fazenda ↗</a></p></div></div>
     <div class="panel"><div class="section-title"><h2>Sobre a base e a privacidade</h2></div><p class="tip">Todo cálculo e armazenamento ocorre no dispositivo. Dados no armazenamento do navegador podem ser perdidos se você limpar o histórico. Exporte CSV ou JSON para guardar uma cópia. A versão de demonstração é sintética e aparece identificada. O relatório não constitui perícia certificada.</p></div>
   </section>
-  <p id="feedback" class="footer" role="status" aria-live="polite">FNC Casino Inspector PRO V7 · Dados locais · Integração opcional · Sem sinais de ganhos comprovados</p>
+  <p id="feedback" class="footer" role="status" aria-live="polite">FNC Casino Inspector PRO V8 · Dados locais · Integração opcional · Sem sinais de ganhos comprovados</p>
 </main>
 </div>
 <script>
@@ -275,8 +397,9 @@ function drawCompare(){
 }
 const oldRender=render;
 // Em vez de sobrescrever os handlers anteriores, ampliar o render central.
-render=function(){oldRender();drawCompare();};
+render=function(){oldRender();drawCompare();window.dispatchEvent(new Event('fnc:datachange'));};
 $('gotoWindows').addEventListener('click',()=>view('windows'));
+$('gotoAI').addEventListener('click',()=>view('ai'));
 $('gotoConnect').addEventListener('click',()=>view('connect'));
 // Previne IDs de rodada duplicados da mesma origem, inclusive em sincronizações sucessivas.
 const addRowBase=addRow;
@@ -343,9 +466,25 @@ setInterval(()=>{if(pair.id&&pair.token&&document.visibilityState==='visible')sy
 if(pair.id&&pair.token)setTimeout(syncBridge,1000);
 
 const now=new Date();now.setMinutes(now.getMinutes()-now.getTimezoneOffset());$('formTime').value=now.toISOString().slice(0,16);
+window.FNCVisionAPI={
+  addResult(record){
+    const r=addRow(record);demo=rows.some(x=>x.demo);const persisted=persist();render();
+    return {saved:persisted,uid:r.uid,record:r};
+  },
+  count(){return rows.length},
+  getRecords(){return rows.map(r=>({uid:r.uid,timestamp:r.timestamp,platform:r.platform,game:r.game,round_id:r.round_id,bet:r.bet,payout:r.payout,source_url:r.source_url,notes:r.notes,demo:r.demo}))},
+  openVision(){view('vision')},
+  openWindows(){view('windows')},
+  openResults(){view('results')}
+};
 render();
 })();
 </script>
+<script defer src="./vision.js"></script>
+<script defer src="./ai_engine.js"></script>
+<script defer src="./ai_panel.js"></script>
+<script defer src="./predict_engine.js"></script>
+<script defer src="./predict_panel.js"></script>
 <script>if("serviceWorker" in navigator && location.protocol.startsWith("http")){addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}));}</script>
 </body>
 </html>
